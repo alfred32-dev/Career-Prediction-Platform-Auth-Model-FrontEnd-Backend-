@@ -1,3 +1,5 @@
+# This file contains API endpoints for the Career Advicer Assessment feature.
+
 from flask import Blueprint, request, jsonify
 import numpy as np
 import logging

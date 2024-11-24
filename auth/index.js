@@ -60,23 +60,29 @@ function isAuthenticated(req, res, next) {
 app.post('/auth/register', async (req, res) => {
   const { email, password } = req.body;
   try {
+    // Check if the email address is already in use
     const existingUser = await User.findOne({ email });
     if (existingUser) {
       return res.status(400).json({ message: 'Email already in use' });
     }
 
+    // Hash the password
     const hash = await bcrypt.hash(password, 10);
 
+    // Create a new user
     const user = await User.create({
       email,
       password: hash,
       displayName: email.split('@')[0],
     });
 
+    // Generate a JWT token for the user
     const token = generateToken(user);
 
+    // Return a 201 response with the JWT token
     res.status(201).json({ message: 'User registered successfully!', token });
   } catch (error) {
+    // Return a 500 response with the error message
     res.status(500).json({ message: 'Error registering user', error: error.message });
   }
 });
@@ -85,16 +91,21 @@ app.post('/auth/register', async (req, res) => {
 app.post('/auth/login', (req, res, next) => {
   passport.authenticate('local', (err, user, info) => {
     if (err) {
+      // Return a 500 response with the error message
       return res.status(500).json({ message: 'Error during login', error: err.message });
     }
     if (!user) {
+      // Return a 400 response with the error message
       return res.status(400).json({ message: 'Invalid credentials' });
     }
     req.logIn(user, (err) => {
       if (err) {
+        // Return a 500 response with the error message
         return res.status(500).json({ message: 'Error logging in', error: err.message });
       }
+      // Generate a JWT token for the user
       const token = generateToken(user);
+      // Return a 200 response with the JWT token
       return res.status(200).json({ message: 'Logged in successfully', token });
     });
   })(req, res, next);
@@ -104,8 +115,10 @@ app.post('/auth/login', (req, res, next) => {
 app.post('/auth/logout', (req, res) => {
   req.logout((err) => {
     if (err) {
+      // Return a 500 response with the error message
       return res.status(500).json({ message: 'Error during logout', error: err.message });
     }
+    // Return a 200 response with the success message
     res.status(200).json({ message: 'Logged out successfully' });
   });
 });
@@ -114,3 +127,4 @@ app.post('/auth/logout', (req, res) => {
 app.listen(8080, () => {
   console.log('Authentication service running on port 8080');
 });
+
