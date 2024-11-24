@@ -12,7 +12,7 @@ const User = require('./models/User');
 const app = express();
 
 // MongoDB connection
-const mongoUri = 'mongodb+srv://propertypro:sweater_weather@studydatabase.fkakq5d.mongodb.net/';
+const mongoUri = 'mongodb+srv://alfred:MongoDBPasswordAccess@cluster0.1awwd.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
 mongoose.connect(mongoUri, {
   useNewUrlParser: true,
   useUnifiedTopology: true

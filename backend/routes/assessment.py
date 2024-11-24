@@ -1,10 +1,12 @@
 # This file contains API endpoints for the Career Advicer Assessment feature.
 
+# Import dependencies
 from flask import Blueprint, request, jsonify
 import numpy as np
 import logging
 import tensorflow as tf
 
+# Create blueprint
 assessment = Blueprint('assessment', __name__)
 logger = logging.getLogger('assessment_api')
 
@@ -38,9 +40,11 @@ career_categories = [
     "Healthcare Support"
 ]
 
+# API endpoint to predict the top 3 career categories for a user
 @assessment.route('/predict', methods=['POST'])
 def predict():
     try:
+        # Get JSON data
         data = request.get_json()
         if data is None:
             return jsonify({"message": "Invalid JSON data"}), 400
@@ -88,3 +92,4 @@ def predict():
     except Exception as e:
         logger.error(f"Error during prediction: {str(e)}")
         return jsonify({"message": "Internal server error"}), 500
+
