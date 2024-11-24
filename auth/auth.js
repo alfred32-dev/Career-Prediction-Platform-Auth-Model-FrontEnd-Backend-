@@ -4,6 +4,7 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const User = require('./models/User');
 
+
 passport.use(new LocalStrategy({
     usernameField: 'email',
     passwordField: 'password',

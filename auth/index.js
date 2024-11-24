@@ -41,7 +41,7 @@ app.use(session({
   cookie: {
     maxAge: 1000 * 60 * 60, // 1 hour
     httpOnly: true,
-    secure: false, // Set to true if using HTTPS
+    secure: false, 
   }
 }));
 
@@ -110,19 +110,6 @@ app.post('/auth/logout', (req, res) => {
   });
 });
 
-// Protected routes
-app.get('/home', isAuthenticated, (req, res) => {
-  res.send('Welcome to the Home page');
-});
-
-app.get('/assessments', isAuthenticated, (req, res) => {
-  res.send('Assessments page');
-});
-
-
-app.get('/joblistings', isAuthenticated, (req, res) => {
-  res.send('Job listings page');
-});
 
 app.listen(8080, () => {
   console.log('Authentication service running on port 8080');
