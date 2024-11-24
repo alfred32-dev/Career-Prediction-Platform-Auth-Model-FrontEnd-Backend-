@@ -1,0 +1,27 @@
+<div class="job-listings-container">
+  <h1>Job Listings</h1>
+
+  <div class="search-bar">
+    <input
+      type="text"
+      [(ngModel)]="searchTerm"
+      (keyup.enter)="searchJobs()"
+      placeholder="Search for jobs..."
+    />
+    <button (click)="searchJobs()">Search</button>
+  </div>
+
+  <div *ngIf="jobs.length === 0" class="no-results">
+    <p>No jobs found. Please try a different search.</p>
+  </div>
+
+  <div *ngIf="jobs.length > 0" class="job-list">
+    <div class="job-card" *ngFor="let job of jobs">
+      <h2>{{ job.title }}</h2>
+      <p><strong>Company:</strong> {{ job.company.display_name }}</p>
+      <p><strong>Location:</strong> {{ job.location.display_name }}</p>
+      <p><strong>Salary:</strong> £{{ job.salary_min }} - £{{ job.salary_max }}</p>
+      <p><strong>Description:</strong> {{ job.description | slice:0:150 }}...</p>
+    </div>
+  </div>
+</div>

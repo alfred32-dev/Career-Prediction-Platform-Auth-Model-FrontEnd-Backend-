@@ -1,0 +1,133 @@
+/* Basic Navbar Styling */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-left .logo {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.navbar-left .brand-name {
+  font-size: 24px;
+  font-weight: bold;
+  font-family: var(--font-family);
+}
+
+.navbar-center {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-center a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: bold;
+  transition: color 0.3s, text-decoration 0.3s;
+}
+
+.navbar-center a:hover {
+  color: var(--background-color);
+  text-decoration: underline;
+}
+
+.navbar-center a.router-link-active {
+  text-decoration: underline;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-right .logout-link,
+.navbar-right .login-link,
+.navbar-right .signup-link {
+  margin-left: 10px;
+  text-decoration: none;
+  color: var(--text-color);
+  border: 2px solid var(--primary-color);
+  padding: 5px 10px;
+  border-radius: 10px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar-right .logout-link:hover,
+.navbar-right .login-link:hover,
+.navbar-right .signup-link:hover {
+  background-color: var(--background-color);
+  color: var(--primary-color);
+}
+
+.profile-icon {
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.profile-img {
+  height: 30px;
+  border-radius: 50%;
+}
+
+/* Hamburger menu icon for mobile */
+.navbar-toggle {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-toggle {
+    display: block;
+  }
+
+  .navbar-menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .navbar-menu.open {
+    display: flex;
+  }
+
+  .navbar-center,
+  .navbar-right {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .navbar-center a,
+  .navbar-right .logout-link,
+  .navbar-right .login-link,
+  .navbar-right .signup-link {
+    margin: 10px 0;
+    width: 100%;
+    text-align: left;
+  }
+
+  .navbar-left .brand-name {
+    font-size: 20px;
+  }
+}

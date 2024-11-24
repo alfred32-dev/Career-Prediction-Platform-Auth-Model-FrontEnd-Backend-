@@ -1,0 +1,62 @@
+.results-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #0B0C10;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    color: #FFF;
+  }
+  
+  .results-content {
+    margin-bottom: 20px;
+  }
+  
+  .results-content p {
+    margin-bottom: 10px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #45A29E;
+    color: #FFF;
+  }
+  
+  button:first-of-type {
+    background-color: #66FCF1;
+    color: #0B0C10;
+    margin-right: 10px;
+  }
+  
+  button:last-of-type {
+    background-color: #1F2833;
+    color: #66FCF1;
+  }
+  
+  .loader {
+    text-align: center;
+  }
+  
+  .career-results {
+    margin-top: 20px;
+  }
+  
+  .career-results ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .career-results li {
+    background-color: #1F2833;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  

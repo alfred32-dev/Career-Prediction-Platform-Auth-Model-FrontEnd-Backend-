@@ -1,0 +1,59 @@
+<div class="assessment-container">
+    <h2>Skills Assessment</h2>
+    
+    <!-- Skills -->
+    <div class="assessment-section">
+      <h3>Skills</h3>
+      
+      <label for="active-listening">How well do you listen to others?</label>
+      <select id="active-listening" [(ngModel)]="skills.activeListening">
+        <option [value]="10">Very poorly</option>
+        <option [value]="30">Poorly</option>
+        <option [value]="50">Moderately</option>
+        <option [value]="70">Well</option>
+        <option [value]="90">Very well</option>
+      </select>
+  
+      <label for="active-learning">How well do you learn new things?</label>
+      <select id="active-learning" [(ngModel)]="skills.activeLearning">
+        <option [value]="10">Very poorly</option>
+        <option [value]="30">Poorly</option>
+        <option [value]="50">Moderately</option>
+        <option [value]="70">Well</option>
+        <option [value]="90">Very well</option>
+      </select>
+  
+      <label for="critical-thinking">How well do you think critically?</label>
+      <select id="critical-thinking" [(ngModel)]="skills.criticalThinking">
+        <option [value]="10">Very poorly</option>
+        <option [value]="30">Poorly</option>
+        <option [value]="50">Moderately</option>
+        <option [value]="70">Well</option>
+        <option [value]="90">Very well</option>
+      </select>
+  
+      <label for="monitoring">How well do you monitor your own and others' performance?</label>
+      <select id="monitoring" [(ngModel)]="skills.monitoring">
+        <option [value]="10">Very poorly</option>
+        <option [value]="30">Poorly</option>
+        <option [value]="50">Moderately</option>
+        <option [value]="70">Well</option>
+        <option [value]="90">Very well</option>
+      </select>
+  
+      <label for="oral-expression">How well do you express yourself verbally?</label>
+      <select id="oral-expression" [(ngModel)]="skills.oralExpression">
+        <option [value]="10">Very poorly</option>
+        <option [value]="30">Poorly</option>
+        <option [value]="50">Moderately</option>
+        <option [value]="70">Well</option>
+        <option [value]="90">Very well</option>
+      </select>
+    </div>
+  
+    <!-- Buttons -->
+    <div class="button-container">
+      <button (click)="save()">Save</button>
+    </div>
+  </div>
+  

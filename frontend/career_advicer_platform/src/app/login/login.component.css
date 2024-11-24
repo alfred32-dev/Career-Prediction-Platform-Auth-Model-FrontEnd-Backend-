@@ -1,0 +1,64 @@
+/* Basic Login Form Styling */
+.login-container {
+  max-width: 300px;
+  margin: 100px auto;
+  padding: 20px;
+  background-color: #f7f7f7;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+button.secondary-button {
+  background-color: #6c757d;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button.secondary-button:hover {
+  background-color: #5a6268;
+}
+
+.error {
+  color: red;
+  margin-top: 10px;
+  text-align: center;
+}

@@ -1,0 +1,81 @@
+<div class="home-section">
+  <!-- Intro Section -->
+  <div class="intro-section">
+    <img src="../assets/images/Sales.png" alt="Intro Image" class="intro-image">
+    <div class="intro-overlay"></div>
+    <div class="intro-text">
+      <h1>CAREERS</h1>
+      <p>Let's help you discover the most profitable careers for you.</p>
+      <button class="get-started-btn" (click)="navigateTo('assessments')">Get Started</button>
+    </div>
+  </div>
+
+  <!-- About Section -->
+  <div class="about-section">
+    <div class="container">
+      <h2>About Our Platform</h2>
+      <p>Our AI-powered career advising platform uses machine learning to provide personalized career advice based on your grades, extracurricular activities, hobbies, targets, and more. We aim to help you explore career options that align with your interests and strengths.</p>
+    </div>
+  </div>
+
+  <!-- Recommendations Section -->
+  <div class="recommendations-section">
+    <h2>Personalized Recommendations</h2>
+    <p>We analyze your skills, personality, and preferences to recommend the best career paths for you. Our algorithms use patterns and relationships among different data sets to provide relevant information, ensuring a unique and tailored experience.</p>
+
+    <!-- Slideshow Section -->
+    <div class="slideshow-container">
+      <button class="nav left" (click)="scrollLeft()">&laquo;</button>
+      <div class="slideshow-wrapper">
+        <div class="slideshow-item" *ngFor="let career of selectedCareers.slice(currentIndex, currentIndex + 1)">
+          <img [src]="'assets/images/' + career + '.png'" alt="{{ career }}">
+        </div>
+      </div>
+      <button class="nav right" (click)="scrollRight()">&raquo;</button>
+    </div>
+  </div>
+
+  <!-- Job Listings Section -->
+  <div class="joblistings-section">
+    <h2>Explore Job Listings</h2>
+    <p>Browse through the latest job openings tailored to your career recommendations.</p>
+    <img src="../assets/images/job.jpeg" alt="Job Listings Image" class="joblistings-image">
+    <button class="joblistings-btn" (click)="navigateTo('joblistings')">View Job Listings</button>
+  </div>
+
+  <!-- Newsletter Section -->
+  <div class="newsletter-section">
+    <h2>Stay Updated</h2>
+    <p>Subscribe to our newsletter to receive the latest updates and career advice directly in your inbox.</p>
+    <input type="email" placeholder="Enter your email">
+    <button class="subscribe-btn">Subscribe</button>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-column">
+      <h3>About</h3>
+      <ul>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+        <li><a href="#">Help</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>Socials</h3>
+      <ul>
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">Twitter</a></li>
+        <li><a href="#">LinkedIn</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>Navigation</h3>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Careers</a></li>
+      </ul>
+    </div>
+  </footer>
+</div>

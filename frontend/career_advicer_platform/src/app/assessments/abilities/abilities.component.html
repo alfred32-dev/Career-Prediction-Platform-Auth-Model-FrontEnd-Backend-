@@ -1,0 +1,82 @@
+<div class="assessment-container">
+  <h2>Abilities Assessment</h2>
+
+  <!-- Cognitive Abilities -->
+  <div class="assessment-section">
+    <h3>Cognitive Abilities</h3>
+
+    <label for="selective-attention">How long can you concentrate on a single task?</label>
+    <select id="selective-attention" [(ngModel)]="cognitiveAbilities.selectiveAttention">
+      <option [value]="10">Less than 30 minutes</option>
+      <option [value]="30">30 minutes to 1 hour</option>
+      <option [value]="50">1 to 3 hours</option>
+      <option [value]="70">3 to 6 hours</option>
+      <option [value]="90">More than 6 hours</option>
+    </select>
+
+    <label for="time-sharing">How many tasks can you handle at the same time?</label>
+    <select id="time-sharing" [(ngModel)]="cognitiveAbilities.timeSharing">
+      <option [value]="10">1 task</option>
+      <option [value]="30">2 tasks</option>
+      <option [value]="50">3 tasks</option>
+      <option [value]="70">4 tasks</option>
+      <option [value]="90">5 or more tasks</option>
+    </select>
+
+    <label for="memorization">How well do you remember things you learned a week ago?</label>
+    <select id="memorization" [(ngModel)]="cognitiveAbilities.memorization">
+      <option [value]="10">Very poorly</option>
+      <option [value]="30">Poorly</option>
+      <option [value]="50">Moderately</option>
+      <option [value]="70">Well</option>
+      <option [value]="90">Very well</option>
+    </select>
+
+    <label for="fluency-of-ideas">How easily do you come up with new ideas?</label>
+    <select id="fluency-of-ideas" [(ngModel)]="cognitiveAbilities.fluencyOfIdeas">
+      <option [value]="10">Very difficultly</option>
+      <option [value]="30">Difficultly</option>
+      <option [value]="50">Moderately</option>
+      <option [value]="70">Easily</option>
+      <option [value]="90">Very easily</option>
+    </select>
+  </div>
+
+  <!-- Physical Attributes -->
+  <div class="assessment-section">
+    <h3>Physical Attributes</h3>
+
+    <label for="stamina">How long can you perform a physically demanding activity?</label>
+    <select id="stamina" [(ngModel)]="physicalAttributes.stamina">
+      <option [value]="10">Less than 30 minutes</option>
+      <option [value]="30">30 minutes to 1 hour</option>
+      <option [value]="50">1 to 2 hours</option>
+      <option [value]="70">2 to 4 hours</option>
+      <option [value]="90">More than 4 hours</option>
+    </select>
+
+    <label for="flexibility">How flexible are you?</label>
+    <select id="flexibility" [(ngModel)]="physicalAttributes.flexibility">
+      <option [value]="10">Very stiff</option>
+      <option [value]="30">Stiff</option>
+      <option [value]="50">Moderately flexible</option>
+      <option [value]="70">Flexible</option>
+      <option [value]="90">Very flexible</option>
+    </select>
+
+    <label for="static-strength">How strong are you when lifting heavy objects?</label>
+    <select id="static-strength" [(ngModel)]="physicalAttributes.staticStrength">
+      <option [value]="10">Very weak</option>
+      <option [value]="30">Weak</option>
+      <option [value]="50">Moderately strong</option>
+      <option [value]="70">Strong</option>
+      <option [value]="90">Very strong</option>
+    </select>
+  </div>
+
+  <!-- Buttons -->
+  <div class="button-container">
+    <button (click)="redo()">Redo</button>
+    <button (click)="continue()">Continue</button>
+  </div>
+</div>

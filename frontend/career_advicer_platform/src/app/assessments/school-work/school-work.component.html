@@ -1,0 +1,22 @@
+<div class="assessment-container">
+    <h2>School Work Assessment</h2>
+    <div class="assessment-section">
+      <h3>Hey, Academics matter. How well do you do in school?</h3>
+      <div *ngFor="let subject of subjects">
+        <label>{{ subject.name }}</label>
+        <select [(ngModel)]="subject.grade" (change)="updateScore(subject)" required>
+          <option value="">Select Grade</option>
+          <option value="100">A (90-100)</option>
+          <option value="80">B (80-89)</option>
+          <option value="60">C (60-79)</option>
+          <option value="40">D (40-59)</option>
+          <option value="20">E (10-39)</option>
+        </select>
+      </div>
+    </div>
+    <div class="button-container">
+      <button (click)="redo()">Redo</button>
+      <button (click)="continue()">Continue</button>
+    </div>
+  </div>
+  

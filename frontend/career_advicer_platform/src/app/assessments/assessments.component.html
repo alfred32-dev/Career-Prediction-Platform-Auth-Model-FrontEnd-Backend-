@@ -1,0 +1,9 @@
+<div class="assessments-container">
+  <h2>Welcome to the Career Assessment</h2>
+  <div class="intro-section" *ngIf="!assessmentStarted">
+    <h3>Introduction</h3>
+    <p>We will help you discover the most suitable careers for you based on your abilities and preferences. Please ensure that you answer all questions honestly and accurately to receive the best recommendations.</p>
+    <button class="get-started-btn" (click)="startAssessment()">{{ buttonText }}</button>
+  </div>
+  <router-outlet></router-outlet>
+</div>

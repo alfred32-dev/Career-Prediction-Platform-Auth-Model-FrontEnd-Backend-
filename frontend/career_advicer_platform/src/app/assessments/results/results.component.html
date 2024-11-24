@@ -1,0 +1,20 @@
+<div class="results-container">
+  <h2>Assessment Results</h2>
+  <div class="results-content">
+    <p>Please confirm your assessment results or redo the assessments if necessary.</p>
+    <button (click)="confirm()">Confirm</button>
+    <button (click)="redo()">Redo</button>
+  </div>
+  <div class="loader" *ngIf="loading">
+    <p>{{ loadingMessage }}</p>
+  </div>
+
+  <div *ngIf="jobFamilies.length > 0" class="job-families">
+    <h3>Job Families Recommendations</h3>
+    <ul>
+      <li *ngFor="let jobFamily of jobFamilies">
+        <strong>{{ jobFamily }}</strong>
+      </li>
+    </ul>
+  </div>
+</div>

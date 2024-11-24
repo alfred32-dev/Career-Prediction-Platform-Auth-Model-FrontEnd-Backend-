@@ -1,0 +1,25 @@
+<nav class="navbar">
+  <div class="navbar-left">
+    <img src="../assets/logo.svg" alt="Logo" class="logo">
+    <div class="brand-name">Careers Garole</div>
+  </div>
+  <div class="navbar-toggle" (click)="toggleMenu()">
+    &#9776; <!-- Unicode character for the hamburger menu -->
+  </div>
+  <div class="navbar-center navbar-menu" [ngClass]="{'open': menuOpen}">
+    <a routerLink="/home" routerLinkActive="active">Home</a>
+    <a routerLink="/assessments" routerLinkActive="active">Assessments</a>
+    <a routerLink="/joblistings" routerLinkActive="active">Job Listings</a>
+  </div>
+  <div class="navbar-right navbar-menu" [ngClass]="{'open': menuOpen}">
+    <ng-container *ngIf="isLoggedIn; else loggedOut">
+      <a (click)="logout()" class="logout-link">Logout</a>
+      
+    </ng-container>
+    <ng-template #loggedOut>
+      <a routerLink="/login" class="login-link">Login</a>
+      <a routerLink="/register" class="signup-link">Sign Up</a>
+    </ng-template>
+  </div>
+</nav>
+<router-outlet></router-outlet>

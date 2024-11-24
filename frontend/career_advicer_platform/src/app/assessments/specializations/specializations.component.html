@@ -1,0 +1,22 @@
+<div class="assessment-container">
+  <h2>Specializations Assessment</h2>
+  
+  <!-- Specializations -->
+  <div class="assessment-section">
+    <h3>Which specializations are you most interested in
+      <br> and how much? </h3>
+    
+    <div *ngFor="let spec of specializations">
+      <label>
+        <input type="checkbox" [(ngModel)]="spec.selected"> {{ spec.name }}
+      </label>
+      <input type="range" min="0" max="100" [(ngModel)]="spec.proficiency" *ngIf="spec.selected">
+    </div>
+  </div>
+  
+  <!-- Buttons -->
+  <div class="button-container">
+    <button (click)="redo()">Redo</button>
+    <button (click)="continue()">Continue</button>
+  </div>
+</div>

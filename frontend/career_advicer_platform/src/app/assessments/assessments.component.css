@@ -1,0 +1,32 @@
+.assessments-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  color: #FFF;
+  background-color: #1F2833;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.intro-section {
+  background-color: #0B0C10;
+  padding: 50px 20px;
+  border: 2px solid #45A29E;
+  margin-bottom: 20px;
+}
+
+.get-started-btn {
+  background-color: #66FCF1;
+  color: #0B0C10;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.get-started-btn:hover {
+  background-color: #45A29E;
+  color: #FFF;
+}
