@@ -11,7 +11,7 @@ assessment = Blueprint('assessment', __name__)
 logger = logging.getLogger('assessment_api')
 
 # Load the .keras model
-model = tf.keras.models.load_model('/home/alfred/Desktop/Career Advicer 2/prediction_model/final_model.keras')
+model = tf.keras.models.load_model('/home/alfred/Desktop/Career Prediction Platform/model_data/final_model.keras')
 
 # Define career categories
 career_categories = [
