@@ -44,8 +44,7 @@ Follow these steps to run the application:
 1. Clone the repository.
 2. Set up your MongoDB database and update the connection settings in the backend.
 3. Install necessary dependencies for both the frontend and backend using npm and pip, respectively.
-4. Train the TensorFlow model or use the pre-trained `.keras` file.
-5. Run the backend and frontend services.
+5. Run the auth, backend and frontend services.
 6. Access the application via the local URL provided by the Angular frontend.
 
 ## Contribution
